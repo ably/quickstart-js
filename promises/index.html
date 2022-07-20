@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="//cdn.ably.com/lib/ably.min-1.js"></script>
+  </head>
+  <body>
+    <h1>Ably Quickstart</h1>
+
+    <ul>
+      <li><p id="status">Status</p></li>
+      <li><p id="message">Messages</p></li>
+    </ul>
+
+    <script>
+      const ably = new Ably.Realtime.Promise({
+        authUrl: "/auth",
+      });
+
+      const ablyRealtimePromiseExample = async () => {
+        // Connect to Ably
+        try {
+          await ably.connection.once("connected");
+          document.getElementById("status").innerHTML = "Connected to Ably!";
+        } catch (error) {
+          console.error(error);
+        }
+
+        // get the channel to subscribe to
+        const channel = ably.channels.get("quickstart");
+
+        // Subscribe to a channel
+        // the promise resolves when the channel is attached (and resolves synchronously
+        // if the channel is already attached)
+        await channel.subscribe("greeting", (message) => {
+          document.getElementById("message").innerHTML = message.data;
+        });
+
+        // Publish a message
+        await channel.publish("greeting", "hello");
+      };
+
+      ablyRealtimePromiseExample();
+    </script>
+  </body>
+</html>
