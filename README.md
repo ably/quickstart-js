@@ -4,8 +4,8 @@ This repository contains the [Quickstart guide](https://ably.com/docs/quick-star
 
 There are two folders: 
 
-* `promises` contains the Quickstart code in Node and JavaScript (in `index.html`) using the promises interface. A [usage guide](./promises/usage.md) is also provided.
-* `callbacks` contains the Quickstart code in Node using callbacks.
+* [`promises`](./promises/) contains the Quickstart code in Node.js and JavaScript (in `index.html`) using the promises interface. A [usage guide](./promises/usage.md) is also provided.
+* [`callbacks`](./callbacks/) contains the Quickstart code in Node.js using callbacks.
 
 ### Authentication
 

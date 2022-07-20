@@ -4,7 +4,7 @@ This folder contains JavaScript source code for the [Quickstart guide](https://a
 
 ### Installation
 
-For Node:
+For Node.js:
 
 ``` shell
 npm install ably
@@ -25,7 +25,7 @@ For JavaScript:
 
 ### Create the client
 
-For Node client:
+For Node.js client:
 
 ``` javascript
 const Ably = require('ably/promises');
