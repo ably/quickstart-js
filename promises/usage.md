@@ -22,7 +22,6 @@ For JavaScript:
   ...
 ```
 
-
 ### Create the client
 
 For Node.js client:
@@ -46,12 +45,8 @@ For JavaScript (browser client):
 ### Connect to Ably
 
 ``` javascript
-try {
-  await ably.connection.once('connected');
-  console.log('connected');
-} catch (error) {
-  console.error(error);
-}
+await ably.connection.once('connected');
+console.log('connected');
 ```
 
 ### Subscribe to a Channel
