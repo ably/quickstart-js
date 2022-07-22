@@ -28,9 +28,11 @@
         // get the channel to subscribe to
         const channel = ably.channels.get("quickstart");
 
-        // Subscribe to a channel
-        // the promise resolves when the channel is attached (and resolves synchronously
-        // if the channel is already attached)
+        /* 
+          Subscribe to a channel. 
+          The promise resolves when the channel is attached 
+          (and resolves synchronously if the channel is already attached).
+        */
         await channel.subscribe("greeting", (message) => {
           document.getElementById("message").innerHTML = message.data;
         });
