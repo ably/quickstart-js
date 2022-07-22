@@ -8,12 +8,8 @@ const ably = new Ably.Realtime.Promise({
 // wrapper for async functions
 const ablyRealtimePromiseExample = async () => {
   // Connect to Ably
-  try {
-    await ably.connection.once("connected");
-    console.log("Connected to Ably!");
-  } catch (error) {
-    console.error(error);
-  }
+  await ably.connection.once("connected");
+  console.log("Connected to Ably!");
 
   // get the channel to subscribe to
   const channel = ably.channels.get("quickstart");
