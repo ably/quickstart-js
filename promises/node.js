@@ -1,5 +1,4 @@
-// Include the promises interface
-const Ably = require("ably/promises");
+const Ably = require("ably");
 // Create the client
 const ably = new Ably.Realtime.Promise({
   authUrl: "https://ably.com/ably-auth/token/docs",
